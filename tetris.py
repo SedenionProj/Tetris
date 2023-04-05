@@ -19,15 +19,19 @@ blockD = [[0,1,0],
           [0,1,1],
           [0,0,1]]
 
-blockE = [[0,1,1],
+blockE = [[0,1,0],
+          [1,1,0],
+          [1,0,0]]
+
+blockF = [[0,1,1],
           [0,1,0],
           [0,1,0]]
 
-blockF = [[1,1,0],
+blockG = [[1,1,0],
           [0,1,0],
           [0,1,0]]
 
-tex = " -ABCDEFGHIJ"
+tex = " -ABCDEFGHIJ" # texture des blocks
 
 def constructGrid(longueur):
     # crée une grille de tetris vide
@@ -53,7 +57,7 @@ def dessiner(grille,b,bText):
 
 def blockInit():
     # réinitialise le block
-    randBlock = [blockA,blockB,blockC,blockD,blockE,blockF][randint(0,5)]
+    randBlock = [blockA,blockB,blockC,blockD,blockE,blockF,blockG][randint(0,6)]
     randTex = randint(2,len(tex)-1)
     x = (len(grid[0]) - len(randBlock))//2
     y = 0
