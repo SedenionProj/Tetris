@@ -120,13 +120,10 @@ bType,bTex,bx,by = blockInit()
 
 hold = False
 
+temps_initial = time.time()
+
 while True:
     renderer.supprimer()
-    actuelle = time.time()
-    dt = actuelle - dernier
-    dernier = actuelle
-
-    timer+=dt
     
     if keyboard.is_pressed("up"):
         if not hold:
@@ -151,7 +148,7 @@ while True:
     else:
         speed = 0.5
 
-    if timer>=speed:
+    if time.time()-temps_initial>=speed:
         # executé tous les "speed" secondes
         if collision(bType,bx,by+1):
             if by == 0:
@@ -164,7 +161,7 @@ while True:
                 bType,bTex,bx,by = blockInit()
         else:
             by += 1
-        timer = 0
+        temps_initial = time.time()
 
     dessiner(grid,bType,bTex)
 
