@@ -106,21 +106,14 @@ def detectLignes():
             del grid[y]
             grid.insert(0,[1]+[0]*(len(grid[0])-2)+[1])
 
-gridLongueur = 15
-
-grid = constructGrid(gridLongueur)
-
-dernier = time.time()
-temps = time.time()
-
-timer = 0
-speed = 0.5
+grid = constructGrid(15)
 
 bType,bTex,bx,by = blockInit()
 
-hold = False
-
 temps_initial = time.time()
+speed = 0.5
+
+hold = False
 
 while True:
     renderer.supprimer()
