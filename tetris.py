@@ -42,7 +42,7 @@ def constructGrid(longueur):
                 grille[y][x] = 1
     return grille
 
-def dessiner(grille,b,bText):
+def dessiner(grille,b,bTex):
     # dessine la grille dans la console
     for y in range(len(grille)):
         for x in range(len(grille[0])):
